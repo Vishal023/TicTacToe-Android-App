@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
             {0,3,6}, {1,4,7}, {2,5,8},
             {0,4,8}, {2,4,6}
     };
-
     public void playerTap(View view){
         ImageView imageView = (ImageView) view;
         int tappedImage = Integer.parseInt(imageView.getTag().toString());
@@ -38,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 activePlayer = 1;
                 TextView status = findViewById(R.id.status);
                 status.setText("X's TURN TAP TO PLAY");
+
             } else {
                 imageView.setImageResource(R.drawable.tic_tac_toe_x);
                 activePlayer = 0;
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             }
             imageView.animate().translationYBy(1000f).setDuration(300);
         }
-
+        String winnerStr="";
         for (int[] winPosition:winningPos){
             if((gameState[winPosition[0]] == gameState[winPosition[1]]) &&
                     (gameState[winPosition[1]] == gameState[winPosition[2]]) &&
@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
             ){
               //win
                 gameActive = false;
-                String winnerStr="";
               if (gameState[winPosition[0]]== 0){
                   winnerStr = "O HAS WON";
               }
@@ -63,6 +62,18 @@ public class MainActivity extends AppCompatActivity {
               }
                 TextView status = findViewById(R.id.status);
                 status.setText(winnerStr);
+            }
+        }
+        if (winnerStr.equals("")){
+            int count = 0;
+            for (int i = 0; i < 9; i++) {
+                if (gameState[i] != 2){
+                    count++;
+                }
+            }
+            if (count == 9){
+                TextView status = findViewById(R.id.status);
+                status.setText("Draw");
             }
         }
     }
@@ -80,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         ((ImageView)findViewById(R.id.imageView7)).setImageResource(0);
         ((ImageView)findViewById(R.id.imageView8)).setImageResource(0);
         TextView status = findViewById(R.id.status);
-        status.setText("X's TURN TAP TO PLAY");
+        status.setText("TAP TO PLAY");
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

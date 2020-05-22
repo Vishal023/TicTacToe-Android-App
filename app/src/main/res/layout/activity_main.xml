@@ -4,16 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00009688"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="730dp"
+        android:layout_height="1025dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
-        android:fontFamily="cursive"
+        android:fontFamily="monospace"
+        android:shadowColor="#5015BA"
         android:text="@string/Heading"
-        android:textSize="36sp"
+        android:textAllCaps="true"
+        android:textColor="#3F51B5"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -153,12 +167,32 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20sp"
         android:fontFamily="monospace"
+        android:shadowColor="#FFFFFF"
         android:text="@string/default_status"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:fontFamily="sans-serif"
+        android:onClick="gameReset"
+        android:paddingLeft="40sp"
+        android:paddingRight="40sp"
+        android:text="@string/reset"
+        android:textColor="#0C0C0C"
+        android:textColorHighlight="#130808"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

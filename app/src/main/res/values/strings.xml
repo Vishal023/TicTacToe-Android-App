@@ -3,4 +3,5 @@
     <string name="Heading">Welcome to Tic Tac Toe</string>
     <string name="Grid">Our main grid</string>
     <string name="default_status">TAP TO PLAY</string>
+    <string name="reset">Reset</string>
 </resources>
